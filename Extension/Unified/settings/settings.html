@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="settings.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Open+Sans" rel="stylesheet">
+    <script src="jquery.js" type="text/javascript" defer></script>
+    <script src="translate.js" type="text/javascript" defer></script>
+    <script src="listener.js" type="text/javascript" defer></script>
+    <script src="settings.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+    <div id="body">
+        <div id="header">
+            <div class="option_side" id="left">
+                <div class="icon" id="state">power_settings_new</div>
+            </div>
+            <input type="checkbox" id="able-switch" hidden>
+            <div id="logo">
+                <img src="../icons/logo.png" alt="YouBlock">
+            </div>
+            <div class="s_menu option_side" id="right">
+                <div class="settings">settings</div>
+            </div>
+        </div>
+        <div id="actions">
+            <div class="menu s_menu selected" id="general">
+                <div class="icon">home</div>
+                <span>menu_general</span>
+            </div>
+            <div class="menu s_menu" id="whitelist">
+                <div class="icon">thumb_up</div>
+                <span>menu_whitelist</span>
+            </div>
+            <div class="menu s_menu" id="blacklist">
+                <div class="icon">thumb_down</div>
+                <span>menu_blacklist</span>
+            </div>
+            <div class="menu s_menu" id="design">
+                <div class="icon">format_paint</div>
+                <span>menu_personalize</span>
+            </div>
+        </div>
+
+        <div class="body general">
+            <div>
+                <h2>title_blur</h2>
+                <input type="range" class="limit" id="slide1" min="0" max="250" step="10">
+                <p>desc_score
+                    <span id="score1">?</span>
+                </p>
+            </div>
+            <div>
+                <h2>title_remove</h2>
+                <input type="range" class="limit" id="slide2" min="0" max="250" step="10">
+                <p>desc_score
+                    <span id="score2">?</span>
+                </p>
+            </div>
+            <div>
+                <h2>title_interval</h2>
+                <input type="range" class="limit" id="slide3" min="0.5" max="10" step="0.25">
+                <p>desc_interval1
+                    <span id="score3">?</span>
+                    <span>desc_interval2</span>
+                </p>
+            </div>
+        </div>
+        <div class="body whitelist" style="display:none;">
+            <div>
+                <h2>title_dontBlockYtber</h2>
+                <textarea rows="9" id="text3" placeholder="placeholder_youtuber"></textarea>
+            </div>
+        </div>
+        <div class="body blacklist" style="display:none;">
+            <div>
+                <h2>title_blockYtber</h2>
+                <textarea rows="3" id="text1" placeholder="placeholder_youtuber"></textarea>
+            </div>
+            <div>
+                <h2>title_blockPhrases</h2>
+                <textarea rows="3" id="text2" placeholder="placeholder_phrases"></textarea>
+            </div>
+        </div>
+        <div class="body right" style="display:none;">
+            <div>
+                <h2>title_lang</h2>
+                <select id="lang-chooser">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
+        </div>
+        <div id="footer">
+            <span id="madewith">misc_madewith</span>
+            <div id="social">
+            <ul>
+                <li id="fb">
+                    <a href="https://youclick.fr/extern?facebook" target="_blank">
+                        <img width="15" src="../icons/facebook.png">
+                    </a>
+                </li>
+                <li id="tw">
+                    <a href="https://youclick.fr/extern?twitter" target="_blank">
+                        <img width="15" src="../icons/twitter.png">
+                    </a>
+                </li>
+                <li id="ds">
+                    <a href="https://youclick.fr/extern?discord" target="_blank">
+                        <img width="15" src="../icons/discord.png">
+                    </a>
+                </li>
+                <li id="yt">
+                    <a href="https://youclick.fr/extern?youtube" target="_blank">
+                        <img width="15" src="../icons/youtube.png">
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

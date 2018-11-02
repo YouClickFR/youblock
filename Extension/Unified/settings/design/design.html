@@ -1,0 +1,406 @@
+<html>
+
+<head>
+    <title>YouBlock - Design</title>
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(roboto.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-size: 0px;
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #F1F1F1;
+            overflow: hidden;
+        }
+
+        #header {
+            background-color: #FFF;
+            width: 100%;
+            height: 55px;
+            padding: 10px;
+            clear: both;
+            z-index: 1000;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+
+        #header #logo {
+            height: 35px;
+            margin-left: 50px;
+        }
+
+        #content {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            top: 55px;
+            left: 0;
+            right: 0;
+        }
+
+        #settings {
+            display: flex;
+            overflow-x: scroll;
+            padding: 20px;
+            width: 100%;
+        }
+
+        #colors,
+        #positioning,
+        #effects {
+            background-color: #FFF;
+            min-width: 400px;
+            min-height: 550px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+            margin: 0px 10px;
+        }
+
+        #spacer {
+            min-width: 20px;
+        }
+
+        .title-wrapper {
+            padding: 24px 0 0 25px;
+        }
+
+        .title-wrapper button {
+            font-size: 13px;
+            float: right;
+            padding: 5px 10px;
+            margin-right: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #CD201F;
+            color: #fff;
+            outline: none;
+            border: none;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #e44e4e;
+        }
+
+        button[type="submit"]:active {
+            background-color: #b11b1b;
+        }
+
+        button[type="reset"] {
+            background-color: #F1F1F1;
+            color: #333;
+            outline: none;
+            border: none;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #d9d9d9;
+        }
+
+        button[type="reset"]:active{
+            background-color: #bfbfbf;
+        }
+
+        #colors .title-wrapper label,
+        #positioning .title-wrapper label,
+        #effects .title-wrapper label {
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        hr {
+            height: 0px;
+            border-top: 1px solid #e2e2e2;
+            border-bottom: 0;
+            margin: 20px 0;
+        }
+
+        .settings-content {
+            margin: 10px 25px 30px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .settings-content * {
+            font-size: 13px;
+        }
+
+        .settings-content span {
+            width: 200px;
+            float: left;
+        }
+
+        .settings-content span+div {
+            margin-left: 200px;
+            margin-bottom: 20px;
+        }
+
+        .settings-content h2 {
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .settings-content input[type="number"] {
+            width: 50px;
+        }
+         
+        .note{
+            font-size: 11px;
+        }
+        #preview {
+            width: 20%;
+            background-color: #FAFAFA;
+            min-width: 230px;
+            max-width: 400px;
+        }
+
+        .prev {
+            background-color: #FAFAFA;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .prev-wrapper {
+            display: inline-block;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+        }
+
+        img {
+            display: block;
+        }
+
+        .prev label {
+            display: block;
+            font-size: 15;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        .blurred .thumbnail {
+            filter: blur(7px) grayscale(100%);
+        }
+
+        .blurred .details {
+            filter: blur(1px) grayscale(100%);
+        }
+
+        .blurred .prev-wrapper:hover img {
+            filter: blur(0px) grayscale(0%);
+        }
+
+        .thumbnail-corner {
+            position: absolute;
+            z-index: 1000;
+            padding: 3px;
+            text-align: center;
+        }
+
+        span {
+            font-size: 13px;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script src="design.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="header">
+        <img id="logo" src="../../icons/logo.png">
+    </div>
+    <div id="content">
+        <div id="settings">
+            <div id="colors">
+                <div class="title-wrapper">
+                    <label>Design</label>
+                    <button type="submit" id="save1">Save</button>
+                    <button type="reset" id="reset1">Reset</button>
+                </div>
+                <hr>
+                <div class="settings-content">
+                    <h2>Colors</h2>
+                    <div>
+                        <span>Presets</span>
+                        <div>
+                            <select id="presets">
+                                <option value="Red">Red</option>
+                                <option value="Green">Green</option>
+                                <option value="Blue">Blue</option>
+                                <option value="Black">Black</option>
+                                <!--<option value="White">White</option>-->
+                                <option value="Invisible">Invisible</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <span>Background</span>
+                        <div>
+                            <input type="color" id="bgcolor">
+                        </div>
+                    </div>
+                    <div>
+                        <span>Border</span>
+                        <div>
+                            <input type="color" id="bordercolor">
+                        </div>
+                    </div>
+                    <div>
+                        <span>Text</span>
+                        <div>
+                            <input type="color" id="textcolor">
+                        </div>
+                    </div>
+                    <div>
+                        <span>Opacity</span>
+                        <div>
+                            <input type="number" min="0" max="1" step="0.05" id="opacity"><br>
+                            <span class="note">0 to hide</span>
+                        </div>
+                    </div>
+                    <h2>Shape</h2>
+                    <div>
+                        <span>Corner radius</span>
+                        <div>
+                            TopLeft:
+                            <input type="number" min="0" max="100" id="borderradius1">px
+                            <br> TopRight:
+                            <input type="number" min="0" max="100" id="borderradius2">px
+                            <br> BottomLeft:
+                            <input type="number" min="0" max="100" id="borderradius3">px
+                            <br> BottomRight:
+                            <input type="number" min="0" max="100" id="borderradius4">px
+                        </div>
+                    </div>
+                    <div>
+                        <span>Border width</span>
+                        <div>
+                            <input type="number" min="0" max="100" id="borderwidth">px
+                        </div>
+                    </div>
+                    <div>
+                        <span>Borders</span>
+                        <div>
+                            <input type="checkbox" id="bordertop">
+                            <label>Top</label>
+                            </br>
+                            <input type="checkbox" id="borderright">
+                            <label>Right</label>
+                            </br>
+                            <input type="checkbox" id="borderbottom">
+                            <label>Bottom</label>
+                            </br>
+                            <input type="checkbox" id="borderleft">
+                            <label>Left</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="positioning">
+                <div class="title-wrapper">
+                    <label>Size and Position</label>
+                    <button type="submit" id="save2">Save</button>
+                    <button type="reset" id="reset2">Reset</button>
+                </div>
+                <hr>
+                <div class="settings-content">
+                    <h2>Size</h2>
+                    <div>
+                        <span>Font</span>
+                        <div>
+                            <input type="number" min="0" max="100" id="fontsize">px</div>
+                    </div>
+                    <div>
+                        <span>Line-height</span>
+                        <div>
+                            <input type="number" min="0" max="100" id="lineheight">px</div>
+                    </div>
+                    <div>
+                        <span>Dimensions</span>
+                        <div>min. width:
+                            <input type="number" min="0" max="100" id="dimwidth">px
+                            <br> min. height:
+                            <input type="number" min="0" max="100" id="dimheight">px<br>
+                            <span class="note">Automatically grows to fit content</span>
+                        </div>
+                    </div>
+                    <h2>Position</h2>
+                    <div>
+                        <span>Align</span>
+                        <div>
+                            <input type="radio" name="alignbtns" id="aligntopleft">TopLeft</br>
+                            <input type="radio" name="alignbtns" id="aligntopright">TopRight</br>
+                            <input type="radio" name="alignbtns" id="alignbottomleft">BottomLeft</br>
+                            <input type="radio" name="alignbtns" id="alignbottomright">BottomRight</div>
+                    </div>
+                </div>
+            </div>
+            <div id="effects">
+                <div class="title-wrapper">
+                    <label>Effects</label>
+                    <button type="submit" id="save3">Save</button>
+                    <button type="reset" id="reset3">Reset</button>
+                </div>
+                <hr>
+                <div class="settings-content">
+                    <h2>Blur</h2>
+                    <div>
+                        <span>Thumbnail</span>
+                        <div>
+                            <input type="number" min="0" max="30" id="blurradiusthumb">px</input>
+                        </div>
+                    </div>
+                    <div>
+                        <span>Title etc.</span>
+                        <div>
+                            <input type="number" min="0" max="30" id="blurradiustext">px</input>
+                        </div>
+                    </div>
+                    <h2>Grayscale</h2>
+                    <div>
+                        <span>Percentage</span>
+                        <div>
+                            <input type="number" min="0" max="100" id="grayscale">%</input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="spacer"></div>
+        </div>
+        <div id="preview">
+            <div id="prev-none" class="prev">
+                <label>Nothing</label>
+                <div class="prev-wrapper">
+                    <div class="thumbnail-corner">0</div>
+                    <img src="prev-top.png" class="thumbnail">
+                    <br>
+                    <img src="prev-bottom.png" class="details">
+                </div>
+            </div>
+            <div id="prev-blurred" class="prev blurred YouBlock90">
+                <label>Blurred</label>
+                <div class="prev-wrapper">
+                    <div class="thumbnail-corner">90</div>
+                    <img src="prev-top.png" class="thumbnail">
+                    <br>
+                    <img src="prev-bottom.png" class="details">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

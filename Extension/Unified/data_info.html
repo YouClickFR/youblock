@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouBlock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 100%;
+            font-family: "Noto Sans", Arial, sans-serif;
+        }
+        
+        background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("./icons/logotransp1.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.3;
+        }
+        info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 50%;
+        }
+        button {
+            padding: 20px;
+            outline-color: red;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        #accept {
+            background-color: #e74c3c;
+            float: right;
+        }
+        #decline {
+            color: #e74c3c;
+            background-color: #bfbfbf;
+            float: left;
+        }
+        button:hover {
+            filter: brightness(120%);
+        }
+        button:active {
+            filter: brightness(80%);
+        }
+    </style>
+    <script src="data_info.js" defer></script>
+</head>
+
+<body>
+    <background></background>
+    <info>
+        <h1>Thanks for using YouBlock!</h1>
+        <p>
+            Due to how this addon works, some data about you might be sent to <a href=https://youclick.fr>YouClick.fr</a> like your IP-address, the title and the id of videos analysed etc.
+        </p>
+        <p>
+            Some of this data will be stored, however we won't sell it to anyone and it's only purpose is to offer and improve our service. A more detailed version of the Terms of Service can be found <a href=https://youclick.fr/mentions_legales>here</a>.
+        </p>
+        <p>
+            We cannot offer a version, where no data is stored, since YouBlock can't work properly without it. Hence, you have to agree to it to use this addon.
+        </p>
+        <button id="decline">Decline&Uninstall</button>
+        <button id="accept">Accept</button>
+    </info>
+</body>
+
+</html>

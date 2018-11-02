@@ -1,0 +1,22 @@
+{
+
+  "manifest_version": 2,
+  "name": "YouBlock - Clickbait-Blocker for YouTube",
+  "version": "0.6",
+  "description": "Blocks annoying clickbait on Youtube!",
+  "short_name": "YouBlock",
+  
+  "background": {
+	"scripts": ["observe.js"]
+  },
+  
+  "icons": {
+	"1080": "icons/logotransp1.png"
+  },
+  
+  "browser_action": {
+	"default_icon": "icons/youblocklogo.png",
+    "default_title": "YouBlock"
+  }
+
+}

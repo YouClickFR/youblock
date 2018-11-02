@@ -1,0 +1,9 @@
+.blurred:hover img{filter: blur(0px) grayscale(0%);}
+.blurred:hover #details{filter: blur(0px) grayscale(0%);}
+
+
+.removed {
+    width: 0px !important; 
+    height: 0px !important; 
+    display: none !important;
+}

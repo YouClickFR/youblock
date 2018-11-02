@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "name": "YouBlock - Clickbait-Blocker for YouTube",
+  "version": "1.5.3.3",
+  "description": "Blocks annoying clickbait on Youtube!",
+  "short_name": "YouBlock",
+  "background": {
+    "page": "background.html"
+  },
+  "icons": {
+    "1080": "icons/logotransp1.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/youblocklogo.png",
+    "default_title": "YouBlock",
+    "default_popup": "settings/settings.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/*"
+      ],
+      "css": [
+        "blocker.css",
+        "scores.css"
+      ],
+      "js": [
+        "jquery.js",
+        "content_script.js"
+      ]
+    }
+  ],
+  "options_ui": {
+    "page": "settings/settings.html"
+  },
+  "web_accessible_resources":[
+    "*"
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "*://*.youclick.fr/*"
+  ],
+  "applications": {
+    "gecko": {
+      "id": "YouBlockDev@gmail.com",
+      "strict_min_version": "42.0"
+    }
+  }
+}
