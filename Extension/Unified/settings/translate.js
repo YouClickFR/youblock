@@ -40,7 +40,7 @@ translations.en = {
     "misc_wedecided": "* We decided that these channels don't need to be blocked and hence we whitelisted them.",
     "misc_alsowhitelist": "Also want be whitelisted?",
     "misc_youclick": "http://www.youclick.fr/?lang=en",
-    "misc_madewith": 'Made with ❤️ by&nbsp; <a target="_blank" href="https://youclick.fr"> YouClick</a>'
+    "misc_madewith": 'Made with ❤️ by&nbsp; <a target="_blank" href="https://youclick.fr/?lang=en"> YouClick</a>'
 };
 translations.fr = {
     "menu_general": "Général",
@@ -77,13 +77,13 @@ translations.fr = {
     "misc_madewith": "Créé avec :",
     "misc_saved": "Sauvegardé !",
     
-    "misc_credit1": "<i>Énormes</i> merci à <a target='_blank' href='https://twitter.com/Ozachi_'>@Ozachi_</a> et <a target='_blank' href='https://twitter.com/SkywalkerFR'>@SkywalkerFR</a> pour m'avoir laissé utiliser leur service pour analyser le score de putaclic de vidéos YouTube. Jetez un œil à leur site ici : <a target='_blank' href='http://www.youclick.fr/?lang=fr'>YouClick.fr</a>",
-    "misc_credit2": "Et aussi merci beaucoup à mes amis pour l'idée de cette extension.",
+    "misc_credit1": "Merci <i>beaucoup</i> à <a target='_blank' href='https://twitter.com/Ozachi_'>@Ozachi_</a> et <a target='_blank' href='https://twitter.com/SkywalkerFR'>@SkywalkerFR</a> pour m'avoir laissé utiliser leur service pour analyser le score de putaclic de vidéos YouTube. Jetez un œil à leur site ici : <a target='_blank' href='http://www.youclick.fr/?lang=fr'>YouClick.fr</a>",
+    "misc_credit2": "Et merci aussi à mes amis pour l'idée de cette extension.",
     
     "misc_wedecided": "* Nous avons décidé que ces chaînes n'avaient pas à être bloquées et nous les avons par conséquent whitelistées.",
     "misc_alsowhitelist": "Vous voulez aussi être whitelisté ?",
     "misc_youclick": "http://www.youclick.fr/?lang=fr",
-    "misc_madewith": 'Développé avec ❤️ par&nbsp; <a target="_blank" href="https://youclick.fr"> YouClick</a>'
+    "misc_madewith": 'Développé avec ❤️ par&nbsp; <a target="_blank" href="https://youclick.fr/?lang=fr"> YouClick</a>'
 };
 translations.es = {
     "menu_general": "General",
@@ -126,7 +126,7 @@ translations.es = {
     "misc_wedecided": "* Decidimos que estos canales no tenían que ser bloqueados, por eso, los pusimos en la lista blanca.",
     "misc_alsowhitelist": "¿También quieres ser en la lista blanca?",
     "misc_youclick": "http://www.youclick.fr/?lang=es",
-    "misc_madewith": 'Made with ❤️ by&nbsp; <a target="_blank" href="https://youclick.fr"> YouClick</a>'
+    "misc_madewith": 'Hecho con ❤️ por&nbsp; <a target="_blank" href="https://youclick.fr/?lang=es"> YouClick</a>'
 };
 translations.de = {
     "menu_general": "Allgemein",
@@ -169,7 +169,7 @@ translations.de = {
     "misc_wedecided": "* Wir haben uns entschieden, dass diese Kanäle nicht geblockt werden müssen, also haben wir sie auf die Whitelist gesetzt.",
     "misc_alsowhitelist": "Du willst auch auf der Whitelist sein?",
     "misc_youclick": "http://www.youclick.fr/?lang=de",
-    "misc_madewith": 'Entwickelt mit ❤️ von&nbsp; <a target="_blank" href="https://youclick.fr"> YouClick</a>'
+    "misc_madewith": 'Entwickelt mit ❤️ von&nbsp; <a target="_blank" href="https://youclick.fr/?lang=de"> YouClick</a>'
 };
 
 function translate(langcode, text){
