@@ -3,7 +3,7 @@ A browser extension to block clickbait on YouTube. Based on the website YouClick
 
 Developer : @MelzerFinn
 
-
+##
 
 Une extension pour bloquer le putaclic sur YouTube. Basée sur le site YouClick, elle utilisait l'algorithme afin de donner un score de putaclic à chaque vidéo affichée sur YouTube. Selon les paramètres définis, l'extension floutait ou masquait les vidéos avec le score choisi.
 
