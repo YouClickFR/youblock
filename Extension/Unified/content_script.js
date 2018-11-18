@@ -29,6 +29,7 @@ chrome.storage.local.get(function(saved){
     $('head').append('<style type="text/css">' + saved.css + '</style>');
 
     //add our suggestions
+    /*
     if ((/(http|https):\/\/([^\/\.]+\.)?youtube\.[^\/\.]+\/?$/gi).test(window.location.href)) {
         var subsstring = JSON.stringify(saved.subscriptions);
         $.ajax({
@@ -46,6 +47,7 @@ chrome.storage.local.get(function(saved){
             }
         });
     }
+    */
 
     loadedSettings = true;
 });
